@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="ReUse Cloud · Recovery Workbench" icon-name="standard:asset_object">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <p class="slds-m-bottom_small">Compare expected contribution, inspect the recommendation, then approve unchanged inputs. Demo currency: BRL.</p>
+            <lightning-button label="Evaluate selected" onclick={evaluate} disabled={noSelection}></lightning-button>
+            <lightning-button class="slds-m-left_small" label="Refresh" onclick={refresh} disabled={busy}></lightning-button>
+            <p class="slds-text-body_small slds-m-top_small">Most recent 200 visible assets. Recommendations are calculated on save; evaluation advances the workflow asynchronously.</p>
+        </div>
+        <lightning-datatable key-field="Id" data={assets} columns={columns} onrowselection={select} onrowaction={inspect}></lightning-datatable>
+        <template lwc:if={inspected}>
+            <section class="slds-box slds-m-around_medium">
+                <h2 class="slds-text-heading_small">{inspected.External_Id__c} · {inspected.Model__c}</h2>
+                <p>{inspected.Decision_Reason__c}</p>
+                <p>Recommended route: {inspected.Route__c} · Policy: {inspected.Policy_Version__c}</p>
+                <div class="slds-grid slds-wrap slds-m-vertical_small">
+                    <div class="slds-col slds-size_1-of-3">Resale net<br/><lightning-formatted-number value={inspected.Resale_Net__c} format-style="currency" currency-code="BRL"></lightning-formatted-number></div>
+                    <div class="slds-col slds-size_1-of-3">Repair expected net<br/><lightning-formatted-number value={inspected.Repair_Net__c} format-style="currency" currency-code="BRL"></lightning-formatted-number></div>
+                    <div class="slds-col slds-size_1-of-3">Recycle net<br/><lightning-formatted-number value={inspected.Recycle_Net__c} format-style="currency" currency-code="BRL"></lightning-formatted-number></div>
+                </div>
+                <lightning-button variant="brand" label="Approve decision" onclick={approve} disabled={cannotApprove}></lightning-button>
+            </section>
+        </template>
+    </lightning-card>
+</template>
