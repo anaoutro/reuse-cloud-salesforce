@@ -1,11 +1,7 @@
-# Editable video source
+# Animated 3D brand edit
 
-These MP4s are edited presentations using real Salesforce screenshots and English explanatory titles. They are not continuous screen recordings and contain no audio. Screenshots are unchanged.
+Two 42-second 1080p films. Independently animated generated raster assets: event stage/tickets for EncoreOps; laptop/repair/circular recovery for ReUse Cloud. Rotation, scale, entrance easing and floating layers are authored in Python. These are 2D layer animations of 3D-rendered artwork, not simulated 3D footage. Original Salesforce captures are unchanged. No continuous click-recording claim.
 
-Edit `scenes.json` to change titles, durations or screenshot order. On Linux install Python 3, reportlab, DejaVu fonts, FFmpeg and Poppler, then run:
+Fonts: Anton (EncoreOps headlines), Fraunces (ReUse Cloud headlines), Manrope (body). Included font files are covered by SIL OFL; see brand-assets/fonts.
 
-```bash
-python portfolio/editing/render_videos.py
-```
-
-Outputs are H.264 MP4, 1920x1080, 24 fps. Captions and fade transitions are rendered locally. Keep `render-temp/` out of git.
+Run `python portfolio/editing/render_videos.py` on Linux with Python Pillow/numpy and FFmpeg. Generated artwork is explanatory, not UI evidence.

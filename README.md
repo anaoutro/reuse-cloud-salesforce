@@ -58,3 +58,22 @@ The packaged deployment responses record the successful native Apex test run. No
 All demo records are fictional. No payments or real client outcomes are claimed. UI monetary labels use BRL for this demo; they are not proof of multi-currency accounting. The org requires login; screenshots, source and edited videos are the client-facing evidence.
 
 Historical offline HTML and design material, when present under `docs/`, remains reference material; the deployed application source is under `force-app/`. It is not the primary platform evidence.
+
+
+## Updated case media
+
+The independent case PDF was redesigned around this application. Updated videos are 42-second motion explainers with authentic screen crops, project-specific animation and an original instrumental soundtrack. No voice narration or continuous click recording is claimed.
+
+
+## Narrative case revision
+
+The case PDF now uses portrait document pages with readable narrative text, magnified original field/row details and full-size unchanged capture appendices. The cover uses explanatory collage art. Videos tell the application business story through paper collage, illustrated scenarios and real screenshots. Illustrations are not CRM evidence.
+
+
+## Narrative case revision
+
+The case PDF now uses portrait document pages with readable narrative text, magnified original field/row details and full-size unchanged capture appendices. The cover uses explanatory collage art. Videos tell the application business story through paper collage, illustrated scenarios and real screenshots. Illustrations are not CRM evidence.
+
+
+### Animated visual identity revision
+Separate logo assets, tactile 3D-rendered artwork animated in independent layers, Anton/Fraunces/Manrope typography and original authentic screenshots. See `portfolio/brand-assets` and `portfolio/editing`.
