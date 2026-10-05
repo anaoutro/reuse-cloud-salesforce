@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version='1.0' encoding='UTF-8'?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
 <classAccesses><apexClass>RecoveryController</apexClass><enabled>true</enabled></classAccesses>
 <classAccesses><apexClass>RecoveryEvaluationJob</apexClass><enabled>true</enabled></classAccesses>
 <classAccesses><apexClass>RecoveryDecisionEngine</apexClass><enabled>true</enabled></classAccesses>
@@ -23,4 +24,4 @@
 <fieldPermissions><editable>false</editable><field>Recovery_Asset__c.Decision_Reason__c</field><readable>true</readable></fieldPermissions>
 <fieldPermissions><editable>false</editable><field>Recovery_Asset__c.Route__c</field><readable>true</readable></fieldPermissions>
 <fieldPermissions><editable>true</editable><field>Recovery_Asset__c.Status__c</field><readable>true</readable></fieldPermissions>
-<hasActivationRequired>false</hasActivationRequired><label>Recovery Operator</label><objectPermissions><allowCreate>true</allowCreate><allowDelete>false</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Recovery_Asset__c</object><viewAllRecords>false</viewAllRecords></objectPermissions><tabSettings><tab>Recovery_Asset__c</tab><visibility>Visible</visibility></tabSettings></PermissionSet>
+<hasActivationRequired>false</hasActivationRequired><label>Recovery Operator</label><objectPermissions><allowCreate>true</allowCreate><allowDelete>false</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Recovery_Asset__c</object><viewAllRecords>false</viewAllRecords></objectPermissions><tabSettings><tab>Recovery_Asset__c</tab><visibility>Visible</visibility></tabSettings><tabSettings><tab>ReUseCloud_Workbench</tab><visibility>Visible</visibility></tabSettings></PermissionSet>

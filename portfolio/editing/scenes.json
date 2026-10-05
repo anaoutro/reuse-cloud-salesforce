@@ -1,0 +1,66 @@
+[
+  {
+    "name": "ReUseCloud_01_Overview",
+    "dir": "reuse_overview",
+    "accent": "#C6DC7D",
+    "project": "ReUse Cloud",
+    "frames": [
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "A second life. A defensible decision.",
+        "A native Salesforce workbench for equipment recovery.\nCompare resale, repair and recycling before approval.",
+        8
+      ],
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "Three assets. Three visible results.",
+        "Atlas 14: Repair, 620, Approved\nOrion 15: Recycle, -520, review required\nLumen 13: Recycle, 50, Evaluated",
+        10
+      ],
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "Explainable Apex policy.",
+        "15 Apex tests passed in Salesforce.\nThe decision engine reached 100% coverage in the recorded deployment test run.",
+        8
+      ]
+    ]
+  },
+  {
+    "name": "ReUseCloud_02_DecisionFlow",
+    "dir": "reuse_flow",
+    "accent": "#C6DC7D",
+    "project": "ReUse Cloud",
+    "frames": [
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "01 / Validate the inputs.",
+        "Condition: an integer from 0 to 100.\nFailure probability: from 0 to 1.\nFinancial inputs must be nonnegative.",
+        8
+      ],
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "02 / Compare eligible routes.",
+        "Resale requires condition >= 70.\nRepair requires condition >= 30.\nRecycling remains eligible.\nCompare contribution after costs and repair risk.",
+        10
+      ],
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "03 / Flag negative contribution.",
+        "Orion 15 recommends Recycle at -520.\nA negative contribution requires manager review.\nDemo display currency: BRL.",
+        9
+      ],
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "04 / Evaluate, then approve.",
+        "Asynchronous evaluation advances the status.\nAuthorized approval requires Evaluated.\nChanged inputs reset the approval workflow.",
+        9
+      ],
+      [
+        "ReUseCloud_Real_Overview.jpg",
+        "Evidence you can verify.",
+        "The overview and existing statuses were inspected in Salesforce.\nThis sequence explains the Apex policy; it is not footage of every approval click.",
+        8
+      ]
+    ]
+  }
+]

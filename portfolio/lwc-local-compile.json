@@ -1,0 +1,21 @@
+{
+  "compiler": "9.4.3",
+  "scope": "Local component syntax compilation; not Salesforce deployment or Apex compilation",
+  "results": [
+    {
+      "file": "recoveryWorkbench.js",
+      "status": "compiled",
+      "warnings": []
+    },
+    {
+      "file": "recoveryWorkbench.html",
+      "status": "compiled",
+      "warnings": []
+    },
+    {
+      "file": "recoveryWorkbench.css",
+      "status": "compiled",
+      "warnings": []
+    }
+  ]
+}

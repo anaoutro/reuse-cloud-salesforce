@@ -1,7 +1,3 @@
-# ReUse Cloud - native Salesforce case
-
-[Read the illustrated PDF](../portfolio/CASE-STUDY.pdf)
-
 # ReUse Cloud - verified implementation and media
 
 Native Salesforce deployment succeeded. 15 Apex tests passed; zero failures. Original deployment proof is retained.
@@ -11,7 +7,3 @@ The native ReUse overview and existing asset results were inspected. API evidenc
 Media: real screenshots, individual case PDF, two Full HD edited explainer videos, cover, editable rendering source. Videos are presentations based on real captures, not continuous recordings. All records are fictional. No client result or payment execution is claimed.
 
 GitHub and Upwork publishing have not been performed in this task.
-
-[Watch edited videos](../portfolio/videos/)
-
-[See original screenshots](../portfolio/screenshots/)

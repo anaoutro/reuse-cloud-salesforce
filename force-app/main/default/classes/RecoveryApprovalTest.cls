@@ -1,7 +1,7 @@
 @IsTest
 private class RecoveryApprovalTest {
     @TestSetup static void usersAndPermissions() {
-        Id profileId = [SELECT Id FROM Profile WHERE Name='Standard User' LIMIT 1].Id;
+        Id profileId = [SELECT Id FROM Profile WHERE Name IN ('Standard User','Usuário Padrão') LIMIT 1].Id;
         Map<String,Id> sets = new Map<String,Id>();
         for(PermissionSet p : [SELECT Id,Name FROM PermissionSet WHERE Name IN
             ('Recovery_Operator','Recovery_Approver','Recovery_Manager')]) sets.put(p.Name,p.Id);

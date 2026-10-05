@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata"><description>Dedicated ReUseCloud portfolio lab. Fictional demonstration data.</description><formFactors>Large</formFactors><isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled><isNavPersonalizationDisabled>false</isNavPersonalizationDisabled><label>ReUseCloud</label><navType>Standard</navType><tabs>ReUseCloud_Workbench</tabs><tabs>Recovery_Asset__c</tabs><uiType>Lightning</uiType></CustomApplication>

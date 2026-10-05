@@ -1,0 +1,55 @@
+{
+  "id": "0Afg700000EES0TCAX",
+  "status": "Succeeded",
+  "success": "true",
+  "numberTestsCompleted": "15",
+  "numberTestErrors": "0",
+  "numberComponentsDeployed": "38",
+  "demoDataLoaded": true,
+  "permissionAssignment": "Verified: Ana only, explicitly approved",
+  "liveApiWorkflowVerified": true,
+  "liveUIWorkflowVerified": false,
+  "screenshotsOfApplicationWorkflow": [
+    "ReUseCloud_Real_Overview.jpg"
+  ],
+  "videoRecorded": false,
+  "syntheticData": true,
+  "codeCoverage": [
+    {
+      "name": "RecoveryController",
+      "covered": 12,
+      "total": 14,
+      "percent": 85.7
+    },
+    {
+      "name": "RecoveryAssetHandler",
+      "covered": 19,
+      "total": 21,
+      "percent": 90.5
+    },
+    {
+      "name": "RecoveryDecisionEngine",
+      "covered": 32,
+      "total": 32,
+      "percent": 100.0
+    },
+    {
+      "name": "RecoveryEvaluationJob",
+      "covered": 8,
+      "total": 8,
+      "percent": 100.0
+    },
+    {
+      "name": "RecoveryAssetTrigger",
+      "covered": 1,
+      "total": 1,
+      "percent": 100.0
+    }
+  ],
+  "liveUIOverviewVerified": true,
+  "editedExplainerVideos": [
+    "ReUseCloud_01_Overview.mp4",
+    "ReUseCloud_02_DecisionFlow.mp4"
+  ],
+  "videoEvidenceType": "Edited presentations using real UI captures, not continuous recordings"
+}

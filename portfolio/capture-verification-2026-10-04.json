@@ -1,0 +1,101 @@
+{
+  "capturedOn": "2026-10-04",
+  "dataClassification": "Fictional portfolio demonstration",
+  "encoreRequests": [
+    {
+      "Pass_Id__c": "DEMO-002",
+      "Request_Status__c": "Confirmed",
+      "Compensation__c": 0.0,
+      "Hold_Until__c": null
+    },
+    {
+      "Pass_Id__c": "DEMO-005",
+      "Request_Status__c": "CreditApproved",
+      "Compensation__c": 132.0,
+      "Hold_Until__c": null
+    },
+    {
+      "Pass_Id__c": "DEMO-008",
+      "Request_Status__c": "RefundApproved",
+      "Compensation__c": 120.0,
+      "Hold_Until__c": null
+    }
+  ],
+  "encoreSessions": [
+    {
+      "Stage_Name__c": "Grove Stage",
+      "Remaining__c": 119.0,
+      "Capacity__c": 120.0
+    },
+    {
+      "Stage_Name__c": "Harbor Stage",
+      "Remaining__c": 79.0,
+      "Capacity__c": 80.0
+    },
+    {
+      "Stage_Name__c": "Neon Stage",
+      "Remaining__c": 60.0,
+      "Capacity__c": 60.0
+    }
+  ],
+  "encoreStatusTotals": [
+    {
+      "Request_Status__c": "RefundApproved",
+      "total": 1
+    },
+    {
+      "Request_Status__c": "CreditApproved",
+      "total": 2
+    },
+    {
+      "Request_Status__c": "Expired",
+      "total": 10
+    },
+    {
+      "Request_Status__c": "New",
+      "total": 285
+    },
+    {
+      "Request_Status__c": "Confirmed",
+      "total": 2
+    }
+  ],
+  "reuseAssets": [
+    {
+      "External_Id__c": "DEMO-001",
+      "Model__c": "Atlas 14",
+      "Condition_Score__c": 85.0,
+      "Route__c": "Repair",
+      "Expected_Net__c": 620.0,
+      "Resale_Net__c": 550.0,
+      "Repair_Net__c": 620.0,
+      "Recycle_Net__c": -350.0,
+      "Needs_Review__c": false,
+      "Status__c": "Approved"
+    },
+    {
+      "External_Id__c": "DEMO-002",
+      "Model__c": "Orion 15",
+      "Condition_Score__c": 65.0,
+      "Route__c": "Recycle",
+      "Expected_Net__c": -520.0,
+      "Resale_Net__c": 230.0,
+      "Repair_Net__c": -807.5,
+      "Recycle_Net__c": -520.0,
+      "Needs_Review__c": true,
+      "Status__c": "Evaluated"
+    },
+    {
+      "External_Id__c": "DEMO-003",
+      "Model__c": "Lumen 13",
+      "Condition_Score__c": 20.0,
+      "Route__c": "Recycle",
+      "Expected_Net__c": 50.0,
+      "Resale_Net__c": 630.0,
+      "Repair_Net__c": 486.0,
+      "Recycle_Net__c": 50.0,
+      "Needs_Review__c": false,
+      "Status__c": "Evaluated"
+    }
+  ]
+}

@@ -1,86 +1,60 @@
 # ReUse Cloud
 
-### Explainable equipment recovery decisions with Salesforce Apex and LWC
+Native Salesforce application built with **Apex + Lightning Web Components**.
 
-A returned device can look valuable and still produce a loss after repair risk, acquisition credit and logistics. ReUse Cloud recommends **resale, repair or recycling**, explains the economics, and controls who may approve the decision.
+![Real Salesforce case cover](portfolio/cover-native.png)
 
-**Apex · Lightning Web Components · Queueable · Salesforce DX · MIT**
+**Deployment: Succeeded | Apex tests: 15 passed | Fictional portfolio lab**
 
-![Interactive browser demonstration of the recovery decision policy](docs/images/decision-lab.png)
+Built a native Salesforce equipment-recovery application using Apex and Lightning Web Components. The explainable decision engine compares eligible resale, repair and recycling routes after credit, logistics and repair risk. The three fictional demo assets show Repair / 620 / Approved, Recycle / -520 / manager review, and Recycle / 50 / Evaluated. Fifteen Apex tests passed in Salesforce; the decision engine reached 100% coverage in the recorded test run. Inputs changed after approval require reevaluation.
 
-*Browser policy demonstration. This image is not a deployed Salesforce screen.*
+## Watch and inspect
 
-[Case study](docs/CASE-STUDY.md) · [Setup and demo script](docs/SETUP.md) · [Architecture](docs/ARCHITECTURE.md) · [Validation](VALIDATION.md)
+- [Case study PDF](portfolio/CASE-STUDY.pdf)
+- [Overview video](portfolio/videos/ReUseCloud_01_Overview.mp4)
+- [Workflow explainer](portfolio/videos/ReUseCloud_02_DecisionFlow.mp4)
+- [Original Salesforce screenshots](portfolio/screenshots/)
+- [Current verified results](portfolio/capture-verification-2026-10-04.json)
+- [Deployment and coverage](portfolio/salesforce-deployment.json)
+- [Upwork copy](portfolio/UPWORK-DRAFT.md)
 
-## What to review
+Videos are edited presentations using real captures, with explanatory titles and fades. They are not continuous screen recordings. Scope and limitations: [implementation status](portfolio/IMPLEMENTATION-STATUS.md).
 
-| Capability | Implementation |
+## Repository structure
+
+| Folder | Purpose |
 |---|---|
-| Explainable scoring | [Pure Apex Decimal engine](force-app/main/default/classes/RecoveryDecisionEngine.cls) |
-| Bulk validation and approval guards | [Before-save handler](force-app/main/default/classes/RecoveryAssetHandler.cls) |
-| Async evaluation | [Queueable job](force-app/main/default/classes/RecoveryEvaluationJob.cls) |
-| User-mode application access | [Apex controller](force-app/main/default/classes/RecoveryController.cls) |
-| Operator interface | [LWC workbench](force-app/main/default/lwc/recoveryWorkbench/recoveryWorkbench.js) |
-| Business and permission tests | [Decision tests](force-app/main/default/classes/RecoveryDecisionEngineTest.cls), [approval tests](force-app/main/default/classes/RecoveryApprovalTest.cls) |
+| `force-app/main/default/classes/` | Apex business logic and tests |
+| `force-app/main/default/lwc/` | Native Lightning Web Components |
+| `force-app/main/default/objects/` | Salesforce object and field metadata |
+| `force-app/main/default/permissionsets/` | Project access roles |
+| `scripts/` | Demo seeding, installation and validation helpers |
+| `portfolio/` | Real captures, PDFs, MP4s and case evidence |
+| `portfolio/editing/` | Reproducible video editing source |
+| `portfolio/archive/` | Previous descriptions preserved for history |
 
-## The worked example
+## Deploy to your own Developer Edition
 
-For DEMO-001, repair succeeds with assumed probability 90%.
+Requires Salesforce CLI and an authorized Developer/scratch org. Run from this repository root:
 
-- Resale: 1,000 − 400 credit − 50 logistics = **BRL 550**.
-- Repair: 0.9 × 1,400 + 0.1 × 100 salvage − 200 repair − 400 credit − 50 logistics = **BRL 620**.
-- Recycle: 100 salvage − 400 credit − 50 logistics = **BRL −350**.
+```bash
+sf org login web --alias portfolio-dev
+sf project deploy start --source-dir force-app --target-org portfolio-dev --test-level RunLocalTests
+sf org assign permset --name Recovery_Operator --target-org portfolio-dev
+sf org assign permset --name Recovery_Manager --target-org portfolio-dev
+sf apex run --file scripts/seed.apex --target-org portfolio-dev
+```
 
-Repair wins. A recommendation is not an approval. Credit above BRL 500 or negative contribution requires manager permission. Changes to decision inputs invalidate the approved state.
+The permission commands assign roles to the authenticated deploying user. Review privileges before using another account. Open App Launcher and search for **ReUseCloud Workbench**. This custom tab runs the deployed LWC inside Salesforce.
 
-## Try the demo
+Use a fresh demo org for seeding. Rerunning seed scripts can change demo inputs or conflict with existing inventory. Dates are relative to seed time; expired event starts must be moved forward for a later EncoreOps demonstration without resetting inventory.
 
-After downloading or cloning, open [docs/demo/index.html](docs/demo/index.html) in a browser. It works offline. Adjust condition, repair cost, credit and failure probability to inspect policy behavior. It cannot approve Salesforce records.
+## Verification
 
-## Run in Salesforce
+The packaged deployment responses record the successful native Apex test run. No Apex source changed during this media update. Refer to [VALIDATION.md](VALIDATION.md) for the original test workflow and [portfolio evidence](portfolio/README.md) for provenance.
 
-Requires Salesforce CLI and an authorized Developer/scratch org. Use a demo org with BRL currency. API 62.0 is a compatibility baseline.
+## Presentation boundaries
 
-~~~powershell
-sf org login web --alias reuse-demo
-sf project deploy start --source-dir force-app --target-org reuse-demo --test-level RunLocalTests
-sf org assign permset --name Recovery_Operator --target-org reuse-demo
-sf org assign permset --name Recovery_Manager --target-org reuse-demo
-sf apex run --file scripts/seed.apex --target-org reuse-demo
-sf apex run test --class-names RecoveryDecisionEngineTest RecoveryApprovalTest --target-org reuse-demo --result-format human --code-coverage --wait 10
-~~~
+All demo records are fictional. No payments or real client outcomes are claimed. UI monetary labels use BRL for this demo; they are not proof of multi-currency accounting. The org requires login; screenshots, source and edited videos are the client-facing evidence.
 
-Add Recovery Workbench to an app page using Lightning App Builder. Full permission roles and test-fixture assumptions are in [setup](docs/SETUP.md).
-
-## Architecture
-
-~~~mermaid
-flowchart LR
-    LWC[Recovery Workbench] --> Controller[Apex controller]
-    Controller --> Queue[Queueable evaluation]
-    Queue --> Records[Recovery Asset records]
-    Records --> Trigger[Validation and approval guard]
-    Trigger --> Engine[Decimal decision engine]
-~~~
-
-## Verification status
-
-**Implemented:** Apex source, trigger, metadata, permissions, LWC, seed records and two Apex test classes.
-
-**Checked locally:** XML structure, metadata references, documentation links and browser demo behavior. Run `python scripts/check_repository.py` for repository checks.
-
-**Still required:** Salesforce compilation, deployment, Apex test execution and runtime permissions verification. CI checks repository structure; it does not compile Apex or claim code coverage.
-
-## Repository map
-
-~~~text
-force-app/main/default/  Apex, trigger, objects, permissions and LWC
-config/                 Scratch-org definition
-scripts/                Seed Apex and repository checks
-docs/                   Case study, architecture, setup, contract and offline demo
-.github/                CI and review templates
-~~~
-
-[Related Databricks project](docs/RELATED-PROJECT.md) · [Contributing](CONTRIBUTING.md) · [MIT license](LICENSE)
-
-All customers, device models and financial assumptions are synthetic. This is an independent portfolio project.
+Historical offline HTML and design material, when present under `docs/`, remains reference material; the deployed application source is under `force-app/`. It is not the primary platform evidence.

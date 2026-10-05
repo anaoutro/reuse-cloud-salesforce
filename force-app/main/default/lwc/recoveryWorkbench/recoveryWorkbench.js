@@ -21,6 +21,11 @@ export default class RecoveryWorkbench extends LightningElement {
         if (result.data) { this.assets = result.data; if(this.inspected) this.inspected = this.assets.find(a => a.Id === this.inspected.Id); }
         if (result.error) this.notify('Unable to load assets', result.error.body?.message || result.error.message, 'error');
     }
+    get loadedCount(){return this.assets.length;}
+    get evaluatedCount(){return this.assets.filter(a=>a.Status__c==='Evaluated').length;}
+    get approvedCount(){return this.assets.filter(a=>a.Status__c==='Approved').length;}
+    get reviewCount(){return this.assets.filter(a=>a.Needs_Review__c).length;}
+    get totalContribution(){return this.assets.reduce((n,a)=>n+Number(a.Expected_Net__c||0),0);}
     get noSelection() { return this.busy || !this.selected.length; }
     get cannotApprove() { return this.busy || !this.inspected || this.inspected.Status__c !== 'Evaluated'; }
     select(event) { this.selected = event.detail.selectedRows.map(a => a.Id); }
